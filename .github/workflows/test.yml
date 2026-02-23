@@ -1,0 +1,15 @@
+name: Hello and goodbye workflow
+
+on: 
+  push:
+    branches:
+    - main                  # Only run when pushing to the main branch
+  workflow_dispatch:        # Manuel trigger from Githubs Action UI
+
+
+jobs: 
+  hello:
+    runs-on: ubunto-latest # Spin up a virtual ubunto server on Github
+    steps:
+      - name: Say goodbye
+        run: echo "Goodbye"
